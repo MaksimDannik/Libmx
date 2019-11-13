@@ -28,3 +28,4 @@ char *mx_del_extra_spaces(const char *str) {
 	mx_strdel(&box);
 	return string;
 }
+
