@@ -4,6 +4,9 @@ INC = ./inc/libmx.h
 HEADTMP = ./libmx.h
 
 SRC = ./mx_binary_search.c \
+	./mx_swap_str_ptrs.c \
+	./mx_intlen.c \
+	./mx_strchr.c \
 	./mx_memrchr.c \
 	./mx_bubble_sort.c \
 	./mx_count_substr.c \
@@ -61,6 +64,9 @@ SRC = ./mx_binary_search.c \
 	./mx_swap_char.c\
 
 SRCS = ./src/mx_binary_search.c \
+	./src/mx_swap_str_ptrs.c \
+    ./src/mx_intlen.c \
+    ./src/mx_strchr.c \
 	./src/mx_memrchr.c \
 	./src/mx_bubble_sort.c \
 	./src/mx_count_substr.c \
@@ -118,6 +124,9 @@ SRCS = ./src/mx_binary_search.c \
 	./src/mx_strncmp.c\
 
 OBJ = ./mx_binary_search.o \
+ 	./mx_swap_str_ptrs.o \
+	./mx_intlen.o \
+	./mx_strchr.o \
 	./mx_memrchr.o \
 	./mx_bubble_sort.o \
 	./mx_count_substr.o \
@@ -175,6 +184,9 @@ OBJ = ./mx_binary_search.o \
 	./mx_strncmp.o\
 
 OBJO = ./obj/mx_binary_search.o \
+ 	./obj/mx_swap_str_ptrs.o \
+    ./obj/mx_intlen.o \
+    ./obj/mx_strchr.o \
 	./obj/mx_memrchr.o \
 	./obj/mx_bubble_sort.o \
 	./obj/mx_count_substr.o \
