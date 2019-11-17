@@ -19,7 +19,9 @@ char *mx_file_to_str(const char *filename) {
 	close(fd);
 	
 	char *result = mx_strnew(len);
+	if (!result) return NULL;
 	fd = open(filename, O_RDONLY);
+	if (fd < 0) return NULL;
 
 	read(fd, result, len);
 	result[len] = '\0';

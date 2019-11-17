@@ -1,19 +1,22 @@
 #include "libmx.h"
 
 char * mx_itoa(int number) {
+	if (number == 0) 
+		return 0;
+	long int x = number;
 	int i = 0;
 	int negative = 0;
-	int size = mx_intlen(number);	
+	int size = mx_intlen(x);	
 	char *str = (char *) malloc((size) * sizeof(char));
 
-	if (number < 0) {
+	if (x < 0) {
 		negative = 1;
-		number = -number;
+		x = -x;
 	}
-	while (number) {
-		int sum = number % 10;
+	while (x) {
+		int sum = x % 10;
 		str[i++] = sum + 48;
-		number = number / 10;
+		x = x / 10;
 	}
 	if (negative)
 		str[i++] = '-';

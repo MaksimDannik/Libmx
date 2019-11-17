@@ -13,10 +13,10 @@ void mx_pop_back(t_list **head) {
 		t_list *p = *head;
 		while (p->next->next != NULL) {
 			p = p->next;
-		p->next->data = NULL;
-		free(p->data);
-		p->next = NULL;
 		}
+		p->next->data = NULL;
+		free(p->next);
+		p->next = NULL;
 	}		
 }
 

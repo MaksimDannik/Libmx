@@ -8,11 +8,13 @@ void *mx_memmem(const void *big, size_t big_len, const void *little, size_t litt
 		return NULL;
 
 	if (little_len == 0) 
-		return (void *)big;
-	
-	 char *box = mx_strstr(b, li);
-		return (char *)box;
+		return (void *)big;	
 
-return NULL;
+	const char* cb = mx_strndup(b, big_len);
+	const char* cli = mx_strndup(li, little_len);
+	
+	if (mx_strstr(cb, cli)) return mx_strstr(cb, cli);
+
+	return NULL;
 }
 
