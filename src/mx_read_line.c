@@ -2,14 +2,13 @@
 
 static int mx_count_bytes(char **data, char **lineptr, char delim, int fd) {
 	int len = 0;
-	
-	if (!data[fd])
-		data[fd] = mx_strnew(0);
+	char *tmp = NULL;	
+
 	while (data[fd][len] != delim && data[fd][len] != '\0')
 			len++;
 	if (data[fd][len] == delim) {
 		*lineptr = mx_strndup(data[fd], len);
-		char *tmp = mx_strdup(data[fd] + ++len);
+		tmp = mx_strdup(data[fd] + ++len);
 		mx_strdel(&data[fd]);
 		data[fd] = tmp;
 		if (data[fd][0] == '\0')
